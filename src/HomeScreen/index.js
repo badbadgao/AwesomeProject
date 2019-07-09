@@ -5,6 +5,7 @@ import {Container, Header, Content, Accordion, Text, Icon, View, Body, Left, Rig
 
 import { createStackNavigator, createAppContainer } from 'react-navigation'; 
 import DetailsScreen from '../DetailsScreen';
+import HomeHeader from './HomeHeader';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,14 +37,15 @@ class HomeScreen extends React.Component<Props> {
   render() {
     return (
       <Container style={styles.container}>
-        <Header searchBar rounded style={styles.header}>
+        <HomeHeader />
+        {/* <Header searchBar rounded style={styles.header}>
           <Item style={styles.item}>
             <Icon name="ios-search" />
             <Input placeholder="Search" />
             <Icon name="ios-people" />
           </Item>
           <Icon name="ios-settings" style={styles.settings}/>
-        </Header>
+        </Header> */}
         <Button
           onPress={() => this.props.navigation.navigate('Details')}
         >
