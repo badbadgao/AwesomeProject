@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View, ListItem , Body } from 'react-native';
+import { FlatList, StyleSheet, Text, View, ListItem , Body,TouchableOpacity } from 'react-native';
 
 import Item from './Item';
 
@@ -20,17 +20,21 @@ const listData = [
 
 const Props = {}
 export default class FlatListBasics extends React.Component<Props> {
+  onPress = () => {
+    this.props.onPressItem();
+  }
+
   render() {
     return (
       <View> 
         <FlatList
           data={listData}
-          onPressItem={this.props.onPressItem}
           renderItem={({item}) => {
             return (
-              <View>
-                <Item itemData={item}/>
-              </View>
+              <Item
+                onPressItem={this.onPress}
+                itemData={item}
+              />
             )
           }}
           keyExtractor = { (item, index) => index.toString() }

@@ -35,10 +35,13 @@ const styles = StyleSheet.create({
 type Props = {};
 
 export default class Item extends React.Component<Props> {
+  onPress = () => {
+    console.log("onpress item 1111123");
+  }
   render() {
     return (
       <Card>
-        <CardItem>
+        <CardItem button onPress={this.props.onPressItem}>
           <View style={styles.container}>
             <Image 
               source={require('../resource/bear.jpg')}  
