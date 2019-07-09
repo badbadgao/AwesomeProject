@@ -7,12 +7,14 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {Platform, StyleSheet, } from 'react-native';
+import {Container, Header, Content, Accordion, Text, Icon, View, Body, Left, Right,Button, Item, Input} from 'native-base';
 
-import Item from './src/HomeScreen/Item';
+import { createBottomTabNavigator, createAppContainer, SafeAreaView } from 'react-navigation';
 import TeacherListView from './src/HomeScreen/TeacherListView';
-import Settings from './src/SettingsScreen/Settings';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import Settings from './src/SettingsScreen/Settings'; 
+
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 import TabNavigator from './src/TabNavigator';
 
@@ -22,14 +24,29 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-
+const dataArray = [
+  { title: "First Element", content: "Lorem ipsum dolor sit amet" },
+  { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
+  { title: "Third Element", content: "Lorem ipsum dolor sit amet" }
+];
 type Props = {};
 class App extends Component<Props> {
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <TabNavigator/>
-      </SafeAreaView>
+        <Container>
+            {/* <Header searchBar rounded style={{display: 'flex', justifyContent:'center',alignItems: 'center'}}>
+              <Item>
+                <Icon name="ios-search" />
+                <Input placeholder="Search" />
+                <Icon name="ios-people" />
+              </Item>
+              <Icon name="ios-settings" style={{marginLeft: 16}}/>
+            </Header> */}
+            <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+              <Text style={styles.title}>Recommend</Text>
+              <TabNavigator/>
+            </SafeAreaView>
+        </Container>
     );
   }
 }
@@ -37,20 +54,14 @@ class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  title: {
+    color: 'tomato',
+    marginLeft: 8,
+    marginTop: 8,
+    marginBottom: -16,
+  }
 });
 
 export default App;

@@ -5,7 +5,7 @@ const Props = {};
 class SettingsScreen extends React.Component<Props> {
   render() {
     return (
-      <Text>Settings</Text>
+      <Text>Category</Text>
     )
   }
 }
