@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
 type Props = {};
 
-export default class Item extends React.Component<Props> {
+export default class ListItem extends React.Component<Props> {
   onPress = () => {
     console.log("onpress item 1111123");
   }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View, ListItem , Body,TouchableOpacity } from 'react-native';
+import { FlatList, StyleSheet, Text, View, Body,TouchableOpacity } from 'react-native';
 
-import Item from './Item';
+import ListItem from './ListItem';
 
 const styles = StyleSheet.create({
   item: {
@@ -31,7 +31,7 @@ export default class FlatListBasics extends React.Component<Props> {
           data={listData}
           renderItem={({item}) => {
             return (
-              <Item
+              <ListItem
                 onPressItem={this.onPress}
                 itemData={item}
               />

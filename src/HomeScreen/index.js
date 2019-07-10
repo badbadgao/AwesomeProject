@@ -3,17 +3,13 @@ import TeacherListView from './TeacherListView';
 import { StyleSheet } from 'react-native';
 import {Container, Header, Content, Accordion, Text, Icon, View, Body, Left, Right,Button, Item, Input} from 'native-base';
 
-import { createStackNavigator, createAppContainer } from 'react-navigation'; 
+import { createStackNavigator, createAppContainer, SafeAreaView} from 'react-navigation'; 
 import DetailsScreen from '../DetailsScreen';
 import HomeHeader from './HomeHeader';
-// import console = require('console');
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    paddingTop: -10,
+    flex: 1,
   },
   header: {
     display: 'flex',
@@ -31,18 +27,22 @@ const styles = StyleSheet.create({
 
 const Props = {};
 class HomeScreen extends React.Component<Props> {
+  static navigationOptions = {
+    // headerTitle instead of title
+    headerTitle: <HomeHeader />,
+  };
+
   onPressItem = () => {
     this.props.navigation.navigate('Details');
   }
 
   render() {
     return (
-      <Container style={styles.container}>
-        <HomeHeader />
+      <View style={styles.container}>
         <TeacherListView 
           onPressItem={this.onPressItem}
         />
-      </Container>
+      </View>
     )
   }
 }
@@ -53,7 +53,7 @@ const HomeStack = createStackNavigator(
     Details: DetailsScreen,
   },
   {
-    headerMode: 'none',
+    // headerMode: 'none',
     initialRouteName: 'Home',
   }
 );

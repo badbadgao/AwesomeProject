@@ -14,12 +14,13 @@ const styles = StyleSheet.create({
 }); 
 
 class DetailsScreen extends React.Component {
+  static navigationOptions = {
+    headerTitle: "Details",
+  };
+
   render() {
     return (
       <Container style={styles.container}>
-        <DetailsHeader
-          onPress={() => this.props.navigation.navigate('Home')}
-        />
         <Content>
           <Text>Details Screen</Text>
           <Button

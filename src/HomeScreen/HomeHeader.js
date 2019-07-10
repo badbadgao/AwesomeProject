@@ -9,22 +9,16 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems:'center',
-    justifyContent: 'center',
-    height: 48,
-    borderBottomColor: '#cccccc',
-    borderBottomWidth: 1,
+    width: '100%',
   },  
   left: {
     marginLeft: 8,
-    marginTop: -10,
   },
   item: {
-    width: '100%',
     height: 36,
   },
   settings: {
     marginLeft: 16,
-    marginTop: -10,
     marginRight: 8,
   }
 });

@@ -33,20 +33,16 @@ type Props = {};
 class App extends Component<Props> {
   render() {
     return (
-        <Container>
-            {/* <Header searchBar rounded style={{display: 'flex', justifyContent:'center',alignItems: 'center'}}>
-              <Item>
-                <Icon name="ios-search" />
-                <Input placeholder="Search" />
-                <Icon name="ios-people" />
-              </Item>
-              <Icon name="ios-settings" style={{marginLeft: 16}}/>
-            </Header> */}
-            <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-              <Text style={styles.title}>Recommend</Text>
+        <View style={{ flex: 1 }}>
+          <SafeAreaView
+            forceInset={{ top: 'always', bottom: 'always' }}
+            style={{ backgroundColor: '#eee' }}
+          >
+            <View style={{ backgroundColor: '#fff' }}>
               <TabNavigator/>
-            </SafeAreaView>
-        </Container>
+            </View>
+          </SafeAreaView>
+        </View>
     );
   }
 }
@@ -61,7 +57,8 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     marginTop: 8,
     marginBottom: -16,
+    height: 20
   }
 });
 
-export default App;
+export default createAppContainer(App);
