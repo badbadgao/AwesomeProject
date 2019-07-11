@@ -39,12 +39,6 @@ const TabNavigator = createBottomTabNavigator(
       labelStyle: {
         fontSize: 12,
       },
-      style: {
-        height: 24,
-      },
-      tabStyle: {
-        height: 48,
-      }
     },
   }
 )

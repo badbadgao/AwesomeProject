@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
   },
   likes: {
     marginLeft: 4,
+  },
+  bottom: {
+    paddingTop: 0,
   }
 });
 
@@ -53,7 +56,7 @@ export default class ListItem extends React.Component<Props> {
             </View>
           </View>
         </CardItem>
-        <CardItem>
+        <CardItem style={styles.bottom}>
           <Left>
             <Button transparent>
               <Icon active name="thumbs-up" />
